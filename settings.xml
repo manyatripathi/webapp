@@ -1,0 +1,92 @@
+<settings>
+	<pluginGroups>
+		<pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+	</pluginGroups>
+	<servers>
+		<server>
+			<id>artifactory</id>
+			<username>admin</username>
+			<password>password</password>
+		</server>
+		<server>
+			<id>nexus</id>
+			<username>#Replace Username#</username>
+			<password>#Replace Password#</password>
+			<configuration>
+				<httpConfiguration>
+					<all>
+						<params>
+							<param>
+								<name>http.authentication.preemptive</name>
+								<value>%b,true</value>
+							</param>
+						</params>
+					</all>
+				</httpConfiguration>
+				<httpHeaders>
+					<property>
+						<name>username</name>
+						<value>#Replace username here#</value>
+					</property>
+				</httpHeaders>
+			</configuration>
+		</server>
+	</servers>
+
+	<mirrors>
+		<mirror><!--This  -->
+			<!--This sends everything else to /public -->
+			<id>nexus</id><!--This  -->
+			<mirrorOf>*</mirrorOf>
+			<url>http://infynp/repository/maven-public/</url>
+		</mirror>
+	</mirrors>
+	<profiles>
+		<profile>
+			<id>nexus</id>
+			<!--Enable snapshots for the built in central repo to direct -->
+			<!--all requests to ne   csdccxus via the mirror -->
+			<repositories>
+				<repository>
+					<id>central</id>
+					<url>http://central</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>central</id>
+					<url>http://central</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	
+	<profile>
+		<id>sonar</id>
+		<activation>
+			<activeByDefault>true</activeByDefault>
+		</activation>
+		<properties>
+			<!-- Optional URL to server. Default value is http://localhost:9000 -->
+			<sonar.host.url>
+				http://localhost:9000
+			</sonar.host.url>
+		</properties>
+	</profile>
+	</profiles>
+	<activeProfiles>
+		<!--make the profile active all the time -->
+		<activeProfile>nexus</activeProfile>
+	</activeProfiles>
+</settings>
