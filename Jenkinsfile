@@ -9,15 +9,15 @@ node
   }
   stage('compile-package')
   {
-      sh "sudo mvn clean"
-      sh "sudo mvn compile"
-      sh "sudo mvn package"
+      sh "mvn clean"
+      sh "mvn compile"
+      sh "mvn package"
   }
   stage('SOnarQube Analysis')
   {
       withSonarQubeEnv('sonar-1')
       {
-          sh 'sudo mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
+          sh 'mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
       }
   }
 }
