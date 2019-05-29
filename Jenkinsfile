@@ -9,8 +9,8 @@ node
   }
   stage('compile-package')
   {
-      sh "sudo mvn clean"
-      sh "sudo mvn compile"
-      sh "sudo mvn package"
+      sh "mvn clean"
+      sh "mvn compile"
+      sh "mvn package"
   }
 }
