@@ -13,3 +13,4 @@ node
       sh "sudo mvn compile"
       sh "sudo mvn package"
   }
+}
