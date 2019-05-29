@@ -5,7 +5,7 @@ node
       env.PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"
   stage('code checkout')
   {
-      git 'https://github.com/manyatripathi/my-app'
+      git 'https://github.com/manyatripathi/webapp'
   }
   stage('compile-package')
   {
