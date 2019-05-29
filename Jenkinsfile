@@ -17,7 +17,7 @@ node
   {
       withSonarQubeEnv('sonar-1')
       {
-          sh 'mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
+          sh 'mvn sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000"'
       }
   }
 }
