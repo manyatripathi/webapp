@@ -4,8 +4,9 @@ node
 {
    def MAVEN_HOME = tool "Maven_HOME"
    def JAVA_HOME = tool "JAVA_HOME"
+	def GIT = tool "Git1"
    env.techStack = "java"
-   env.PATH="${env.PATH};${MAVEN_HOME}\\bin;${JAVA_HOME}\\bin"
+	env.PATH="${env.PATH};${MAVEN_HOME}\\bin;${JAVA_HOME}\\bin;${GIT}\\bin"
    try{
 
    stage('Checkout')
