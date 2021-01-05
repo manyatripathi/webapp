@@ -7,7 +7,7 @@ node
    env.techStack = "java"
    env.PATH="${env.PATH};${MAVEN_HOME}\\bin;${JAVA_HOME}\\bin"
    try{
-	   stage('hvhb'){	bat "git config --global http.sslVerify false"}
+
    stage('Checkout')
    {
        FAILED_STAGE=env.STAGE_NAME
