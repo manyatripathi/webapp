@@ -2,6 +2,7 @@
 
 node 
 {
+   def techStack	
    def MAVEN_HOME = tool "Maven_HOME"
    def JAVA_HOME = tool "JAVA_HOME"
 	//def GIT = tool "Git1"
